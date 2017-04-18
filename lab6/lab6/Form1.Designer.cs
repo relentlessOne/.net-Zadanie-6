@@ -38,17 +38,17 @@
             this.loadPictureBtn = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.GaussianSharpen = new System.Windows.Forms.Button();
             this.Edges = new System.Windows.Forms.Button();
             this.Grayscale = new System.Windows.Forms.Button();
             this.saveFile = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // brushSize
@@ -114,6 +114,7 @@
             this.pictureNameBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureNameBox.Location = new System.Drawing.Point(41, 23);
             this.pictureNameBox.Name = "pictureNameBox";
+            this.pictureNameBox.ReadOnly = true;
             this.pictureNameBox.Size = new System.Drawing.Size(167, 20);
             this.pictureNameBox.TabIndex = 2;
             // 
@@ -138,6 +139,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(271, 681);
             this.panel1.TabIndex = 10;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.GaussianSharpen);
+            this.panel3.Controls.Add(this.brushSizeText);
+            this.panel3.Controls.Add(this.Edges);
+            this.panel3.Controls.Add(this.loadPictureBtn);
+            this.panel3.Controls.Add(this.Grayscale);
+            this.panel3.Controls.Add(this.pictureNameBox);
+            this.panel3.Controls.Add(this.saveFile);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.brushSize);
+            this.panel3.Controls.Add(this.colorPanel);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.hexColor);
+            this.panel3.Location = new System.Drawing.Point(9, 68);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(250, 450);
+            this.panel3.TabIndex = 1;
             // 
             // GaussianSharpen
             // 
@@ -206,26 +226,6 @@
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.GaussianSharpen);
-            this.panel3.Controls.Add(this.brushSizeText);
-            this.panel3.Controls.Add(this.Edges);
-            this.panel3.Controls.Add(this.loadPictureBtn);
-            this.panel3.Controls.Add(this.Grayscale);
-            this.panel3.Controls.Add(this.pictureNameBox);
-            this.panel3.Controls.Add(this.saveFile);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.brushSize);
-            this.panel3.Controls.Add(this.colorPanel);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.hexColor);
-            this.panel3.Location = new System.Drawing.Point(9, 68);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(250, 450);
-            this.panel3.TabIndex = 1;
-
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,10 +236,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1,15 +1,8 @@
 ﻿using AForge.Imaging.Filters;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace lab6
@@ -30,11 +23,13 @@ namespace lab6
         {
             InitializeComponent();
             DrawArea = new Bitmap(pictureBox1.Size.Width, pictureBox1.Size.Height);
+     
             this.pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.Image = DrawArea;
             myBrush = new SolidBrush(Color.Black);
             brushSizeText.Text = Convert.ToString(radius);
             g = Graphics.FromImage(DrawArea);
+            g.Clear(Color.White);
             colorPanel.BackColor = Color.Black;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             hexColor.Text = HexConverter(Color.Black);
@@ -71,8 +66,7 @@ namespace lab6
 
         private void loadPictureBtn_Click(object sender, EventArgs e)
         {
-            if (fileStream != null)
-                fileStream.Dispose();
+     
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = "c:\\";
@@ -175,9 +169,15 @@ namespace lab6
 
             if (savefile.ShowDialog() == DialogResult.OK)
             {
+                image.Dispose();
+
+                if (System.IO.File.Exists(savefile.FileName))
+                    System.IO.File.Delete(savefile.FileName);
+
                 DrawArea.Save(savefile.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
         }
+
 
         private void Grayscale_Click(object sender, EventArgs e)
         {
